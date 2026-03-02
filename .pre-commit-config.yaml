@@ -1,0 +1,21 @@
+default_stages: [pre-commit]
+default_install_hook_types: [pre-commit, commit-msg]
+default_language_version:
+  python: python3.14
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: "v0.15.1"
+    hooks:
+      - id: ruff
+        name: Code linting
+        args:
+          - --fix
+      - id: ruff-format
+        name: Code formatting
+
+  - repo: https://github.com/pappasam/toml-sort
+    rev: v0.24.3
+    hooks:
+      - id: toml-sort
+        entry: toml-sort
+        args: [pyproject.toml]
