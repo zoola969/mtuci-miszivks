@@ -99,9 +99,7 @@ def main(page: ft.Page) -> None:
         lines = [
             _format_field("Интернет подключён", result.internet_connected),
             _format_field("Межсетевой экран установлен", result.firewall_installed),
-            _format_field(
-                "Межсетевой экран активен", result.firewall_operational
-            ),
+            _format_field("Межсетевой экран активен", result.firewall_operational),
             f"Антивирус установлен: {result.antivirus_installed if result.antivirus_installed is not None else 'не выполнялось'}",
             _format_field(
                 "Антивирус активен (защита в реальном времени)",
@@ -187,9 +185,7 @@ def main(page: ft.Page) -> None:
     action_row = ft.Row(
         [
             ft.ElevatedButton("Вывести результаты", on_click=show_results),
-            ft.ElevatedButton(
-                "Сохранить результаты в файл", on_click=save_results
-            ),
+            ft.ElevatedButton("Сохранить результаты в файл", on_click=save_results),
             ft.ElevatedButton("Выход", on_click=exit_app),
         ],
         alignment=ft.MainAxisAlignment.END,
